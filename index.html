@@ -47,6 +47,12 @@ header h1 {
   line-height: 1.2;
 }
 
+@media (max-width: 480px)/*tela do celular*/{
+  header h1 {
+    font-size: 3rem; 
+    padding: 1.5rem 1rem 0.5rem;
+  }
+}
 header h4 {
   font-family: 'Playfair Display', serif;
   font-style: italic;
@@ -59,39 +65,46 @@ header h4 {
   user-select: none;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
 }
-    /* Contagem regressiva estilizada */
-    #countdown {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 15px;
-      font-family: 'Mea Culpa', cursive;
-      color: var(--marsala);
-      user-select: none;
-    }
 
-    .countdown-segment {
-      background: #f9e8e8;
-      border-radius: 10px;
-      padding: 15px 20px;
-      min-width: 65px;
-      box-shadow: 0 2px 6px rgba(139, 46, 62, 0.15);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: background-color 0.3s ease;
-    }
+@media (max-width: 480px)/*tela do celular*/ {
+  header h4 {
+    font-size: 1.3rem;
+    margin-top: 0.2rem;
+  }
+}
+/* Contagem regressiva estilizada */
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  font-family: 'Mea Culpa', cursive;
+  color: var(--marsala);
+  user-select: none;
+}
 
-    .countdown-segment:hover {
-      background-color: #f4d6d6;
-      box-shadow: 0 4px 12px rgba(139, 46, 62, 0.3);
-    }
+.countdown-segment {
+  background: #f9e8e8;
+  border-radius: 10px;
+  padding: 15px 20px;
+  min-width: 65px;
+  box-shadow: 0 2px 6px rgba(139, 46, 62, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
 
-    .countdown-number {
-      font-size: 2.4em;
-      font-weight: 700;
-      line-height: 1;
-    }
+.countdown-segment:hover {
+  background-color: #f4d6d6;
+  box-shadow: 0 4px 12px rgba(139, 46, 62, 0.3);
+}
+
+.countdown-number {
+  font-size: 2.4em;
+  font-weight: 700;
+  line-height: 1;
+}
 
 .countdown-label {
   font-family: 'The Youngest', cursive;
@@ -101,6 +114,28 @@ header h4 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--marsala);
+}
+
+/* Ajustes para celular */
+@media (max-width: 480px) {
+  #countdown {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .countdown-segment {
+    min-width: auto;
+    padding: 12px 16px;
+  }
+
+  .countdown-number {
+    font-size: 1.8em;
+  }
+
+  .countdown-label {
+    font-size: 0.75em;
+  }
 }
 
 div.presente p.citacao {
@@ -115,7 +150,6 @@ div.presente p.citacao {
   font-size: 0.95rem; 
   font-family: 'The Youngest', cursive;
   line-height: 1.4;
-  text-align: left;
 }
 
 section {
@@ -184,6 +218,8 @@ h2 {
     /* Botão principal - “Irei presentear” */
 /* Botão principal - “Irei presentear” */
 .presente button.btn-presentear {
+  display: block;
+  margin: 1rem auto; /* centraliza horizontalmente */
   background-color: var(--marsala);
   color: white;
   border: none;
@@ -213,6 +249,8 @@ h2 {
 
     /* Link secundário - Buscapé - atualizado com cores do site */
 .presente .btn-link {
+  display: block;
+  margin: 1rem auto; /* centraliza horizontalmente */
   background-color: white;
   color: var(--marsala);
   font-family: 'The Youngest', cursive;
@@ -390,10 +428,10 @@ footer {
     <p>Air Fryer Philco Inox</p>
     <a href="https://www.buscape.com.br/fritadeira/fritadeira-eletrica-sem-oleo-philco-air-fryer-oven-pfr2200p-capacidade-12l?_lc=88&searchterm=Philco+Oven%E2%80%AFPFR2200P+12%E2%80%AFL+%E2%80%94+vers%C3%A3o+127%E2%80%AFV&utm_source=share_copy&utm_medium=share_web&utm_campaign=share_prod_top"
       target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
-    <button class="btn-presentear">Irei presentear com esta opção</button>
     <p class="citacao">Para fazer batata, coxinha e tudo o que a gente ama… só que sem óleo (e sem culpa). 😋🍽️</p>
     <p class="citacao">Ideal para quando a gente esquecer de descongelar o frango... de novo. 😂🐔</p>
     <p class="citacao">Nosso sonho de consumo pra fazer comidinhas rápidas e gostosas sem bagunça! 🤩🍴</p>
+    <button class="btn-presentear">Irei presentear com esta opção</button>
   </div>
     <div class="presente" data-presente="Aspirador de Pó Vertical Electrolux">
       <p>Aspirador de Pó Vertical Electrolux</p>
