@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gabriela & Rafael - Nosso Casamento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=The+Youngest&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --marsala: #8b2e3e;
+      --fundo: #fff8f7;
+      --texto: #333;
+      --modal-bg: rgba(0,0,0,0.5);
+      --modal-white: #fff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'The Youngest', cursive;
+      background-color: var(--fundo);
+      color: var(--texto);
+      text-align: center;
+    }
+
+header {
+  background-color: white;
+  color: var(--marsala);
+  padding: 20px;
+  background-image: radial-gradient(circle, #f8f0f1 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-bottom: 4px solid rgba(110, 34, 48, 0.3); /* mais espessa e mais transparente */
+}
+
+header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 10rem;
+  font-weight: normal;
+  color: var(--marsala);
+  margin: 0;
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.25);
+  line-height: 1.2;
+}
+
+header h4 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--marsala);
+  text-align: center;
+  margin-top: 0rem;
+  letter-spacing: 0.8px;
+  user-select: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+    /* Contagem regressiva estilizada */
+    #countdown {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+      font-family: 'Mea Culpa', cursive;
+      color: var(--marsala);
+      user-select: none;
+    }
+
+    .countdown-segment {
+      background: #f9e8e8;
+      border-radius: 10px;
+      padding: 15px 20px;
+      min-width: 65px;
+      box-shadow: 0 2px 6px rgba(139, 46, 62, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .countdown-segment:hover {
+      background-color: #f4d6d6;
+      box-shadow: 0 4px 12px rgba(139, 46, 62, 0.3);
+    }
+
+    .countdown-number {
+      font-size: 2.4em;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+.countdown-label {
+  font-family: 'The Youngest', cursive;
+  font-size: 0.85em;
+  margin-top: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--marsala);
+}
+
+div.presente p.citacao {
+  font-weight: normal;
+  font-style: italic;
+  color: #333;
+  background-color: #ffffff;
+  padding: 0.6em 1em;
+  border-left: 3px solid var(--marsala);
+  margin: 0.4em 0;
+  border-radius: 8px; 
+  font-size: 0.95rem; 
+  font-family: 'The Youngest', cursive;
+  line-height: 1.4;
+  text-align: left;
+}
+
+section {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: var(--marsala);
+  font-family: 'The Youngest', cursive;
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(110, 34, 48, 0.1);
+}
+
+    .observação {
+    margin-top: 16px; 
+    padding: 12px; 
+    background-color: #f9f1f1; 
+    border-left: 4px solid #800000; 
+    border-radius: 8px; 
+    font-size: 0.95rem; 
+    color: #333;
+}
+
+.presente {
+  background-color: #fff8f9; /* tom suave puxando para Marsala clarinho */
+  padding: 20px;
+  margin: 12px 0;
+  border-radius: 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  /* sombra suave e elegante */
+  box-shadow: 0 4px 10px rgba(110, 34, 48, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.presente:hover {
+  box-shadow: 0 6px 14px rgba(110, 34, 48, 0.15);
+  transform: translateY(-2px);
+}
+
+.presente p {
+  flex-basis: 100%;
+  margin-bottom: 12px;
+  font-family: 'The Youngest', cursive;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--marsala);
+  text-align: center;
+}
+
+    /* Botão principal - “Irei presentear” */
+/* Botão principal - “Irei presentear” */
+.presente button.btn-presentear {
+  background-color: var(--marsala);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: 'The Youngest', cursive; /* para combinar com seu site */
+  max-width: 220px;
+  flex-grow: 1;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(110, 34, 48, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.presente button.btn-presentear:hover,
+.presente button.btn-presentear:focus {
+  background-color: #571a24; /* tom mais escuro do marsala */
+  box-shadow: 0 6px 12px rgba(87, 26, 36, 0.6);
+  transform: translateY(-2px);
+  outline: none;
+}
+    .presente button.btn-presentear:hover:not(:disabled) {
+      background-color: #6e2230;
+    }
+
+    /* Link secundário - Buscapé - atualizado com cores do site */
+.presente .btn-link {
+  background-color: white;
+  color: var(--marsala);
+  font-family: 'The Youngest', cursive;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1.8px solid var(--marsala);
+  max-width: 180px;
+  text-align: center;
+  flex-grow: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.presente .btn-link:hover,
+.presente .btn-link:focus {
+  background-color: var(--marsala);
+  color: white;
+  box-shadow: 0 4px 12px rgba(110, 34, 48, 0.5);
+  transform: translateY(-2px);
+  outline: none;
+}
+    .presente button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      color: #666;
+    }
+
+footer {
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #7a5a5f; /* tom Marsala suave para harmonia */
+  font-family: 'The Youngest', cursive;
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 2px solid rgba(110, 34, 48, 0.2); /* borda superior sutil */
+  background-color: #fff8f9; /* fundo suave, Marsala clarinho */
+  user-select: none;
+}
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed; 
+      z-index: 1000; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: var(--modal-bg);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: var(--modal-white);
+      padding: 20px 30px;
+      border-radius: 8px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      text-align: left;
+      position: relative;
+      font-family: 'The Youngest', cursive;
+      color: var(--texto);
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      color: var(--marsala);
+    }
+
+    .modal-content label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1em;
+    }
+
+    .modal-content button.submit-btn {
+      background-color: var(--marsala);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+      font-size: 1.1em;
+    }
+
+    .modal-content button.close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: var(--marsala);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gabriela & Rafael</h1>
+    <h4>💍 “Contagem regressiva para o nosso grande dia." 💍</h4>
+    <div id="countdown">
+      <div class="countdown-segment">
+        <span class="countdown-number" id="days">0</span>
+        <span class="countdown-label">Dias</span>
+      </div>
+      <div class="countdown-segment">
+        <span class="countdown-number" id="hours">00</span>
+        <span class="countdown-label">Horas</span>
+      </div>
+      <div class="countdown-segment">
+        <span class="countdown-number" id="minutes">00</span>
+        <span class="countdown-label">Minutos</span>
+      </div>
+      <div class="countdown-segment">
+        <span class="countdown-number" id="seconds">00</span>
+        <span class="countdown-label">Segundos</span>
+      </div>
+    </div>
+  </header>
+
+<section style="
+  background-color: #6e2230;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 3rem auto;
+  font-family: 'The Youngest', cursive;
+  font-size: 1.2rem;
+  line-height: 2;
+  color: #ffffff;
+  position: relative;
+">
+  <p style="margin-bottom: 1.5rem;">Sejam muito bem-vindos ao nosso cantinho do amor!</p>
+  <p style="margin-bottom: 1.5rem;">Depois de tantos capítulos juntos, chegou o momento de viver um novo começo — e nada faria mais sentido do que celebrar com vocês, que fazem parte da nossa história.</p>
+  <p style="margin-bottom: 1.5rem;">Criamos este site com muito carinho para compartilhar cada detalhe do nosso grande dia: a cerimônia, a festa, a lista de presentes e tudo que torna esse momento tão especial.</p>
+  <p style="margin-bottom: 1.5rem;">Amor é amor, e ele merece ser celebrado com quem amamos! Contamos com a presença de todos para tornar essa festa inesquecível.</p>
+  <p style="margin-bottom: 2rem;">Estamos muito felizes em dividir essa nova etapa com vocês.</p>
+</section>
+
+<section>
+  <h2>🎁 Lista de Presentes</h2>
+  <section class="lista-introducao" style="text-align: center; padding: 2rem;">
+    <p>Montamos essa lista de forma bem atenciosa, pensando nas coisas que vão fazer parte da nossa nova vida e que ainda não adquirimos.</p>
+    <p>Selecionamos os itens de acordo com nossas necessidades e preferências, incluindo opções com valores variados.</p>
+    <p>Fique à vontade para escolher o presente que quiser ou, se preferir, também deixamos nossa chave Pix e QR code no final do site como uma alternativa.</p>
+    <p>Gratidão! 🙏</p>
+    <p class="observação"> <strong>🚨 Observação:</strong> É possível também selecionar o(s) presente(s) por aqui e nos enviar o valor via Pix, fiquem à vontade! Nós mesmos cuidaremos da compra com todo carinho.</p>
+  </section>
+
+  <div class="presente" data-presente="Air Fryer Philco Inox">
+    <p>Air Fryer Philco Inox</p>
+    <a href="https://www.buscape.com.br/fritadeira/fritadeira-eletrica-sem-oleo-philco-air-fryer-oven-pfr2200p-capacidade-12l?_lc=88&searchterm=Philco+Oven%E2%80%AFPFR2200P+12%E2%80%AFL+%E2%80%94+vers%C3%A3o+127%E2%80%AFV&utm_source=share_copy&utm_medium=share_web&utm_campaign=share_prod_top"
+      target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+    <button class="btn-presentear">Irei presentear com esta opção</button>
+    <p class="citacao">Para fazer batata, coxinha e tudo o que a gente ama… só que sem óleo (e sem culpa). 😋🍽️</p>
+    <p class="citacao">Ideal para quando a gente esquecer de descongelar o frango... de novo. 😂🐔</p>
+    <p class="citacao">Nosso sonho de consumo pra fazer comidinhas rápidas e gostosas sem bagunça! 🤩🍴</p>
+  </div>
+    <div class="presente" data-presente="Aspirador de Pó Vertical Electrolux">
+      <p>Aspirador de Pó Vertical Electrolux</p>
+      <a href="https://www.buscape.com.br/aspirador-po-agua/aspirador-de-po-vertical-portatil-electrolux-stk15?_lc=88&searchterm=Aspirador%20Electrolux%20STK15" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>
+    <div class="presente" data-presente="Panela de Pressão Elétrica Philco">
+      <p>Panela de Pressão Elétrica Philco</p>
+      <a href="https://www.buscape.com.br/panela-eletrica/panela-de-pressao-eletrica-6-litros-philco?_lc=88&searchterm=Philco%E2%80%AFPPP01P%E2%80%AF6%E2%80%AFL" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>
+    <div class="presente" data-presente="Cafeteira Philco">
+      <p>Cafeteira Philco</p>
+      <a href="https://www.buscape.com.br/search?q=Cafeteira%20Philco%20PCFE01%20110V" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+    <div class="presente" data-presente="Micro-ondas Panasonic">
+      <p>Micro-ondas Panasonic</p>
+      <a href="https://www.buscape.com.br/microondas/micro-ondas-panasonic-21-litros-nn-st27lwru?_lc=88&searchterm=Panasonic%20NN-ST27" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+        <div class="presente" data-presente="Liquidificador Arno">
+      <p>Liquidificador Arno</p>
+      <a href="https://www.buscape.com.br/liquidificador/liquidificador-arno-power-max-ln64-ln65-3-1-litros-15-velocidades-1-400-w?_lc=88&searchterm=Liquidificador%20Arno%20Power%20Max%20LN64%2FLN65%203%2C1%20Litros%2015%20Velocidades%20110v#detalhes" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+        <div class="presente" data-presente="Batedeira Philco Inox">
+      <p>Batedeira Philco Inox</p>
+      <a href="https://www.buscape.com.br/search?q=Philco%20PBP770PI%20Turbo%20Inox" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+        <div class="presente" data-presente="Grill Sanduicheira Philco">
+      <p>Grill Sanduicheira Philco</p>
+      <a href="https://www.buscape.com.br/search?q=Grill%20Sanduicheira%20Philco%20Maxx%20Clean%20PGR21PI%20110V" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+        <div class="presente" data-presente="Chaleira Elétrica Philco">
+      <p>Chaleira Elétrica Philco</p>
+      <a href="https://www.buscape.com.br/search?q=Chaleira%20El%C3%A9trica%20Philco%20PCH03PI%09" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+        <div class="presente" data-presente="Mixer Philco">
+      <p>Mixer Philco</p>
+      <a href="https://www.buscape.com.br/search?q=mixer%20Philco%20PHM04PI%20Turbo%09110V" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+        <div class="presente" data-presente="Processador de Alimentos Arno">
+      <p>Processador de Alimentos Arno</p>
+      <a href="https://www.buscape.com.br/processador-mini-multi/processador-de-alimentos-com-liquidificador-arno-multichef-7-em-1-700-w?_lc=88&searchterm=Arno%20Multiprocessador#historico-de-precos" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+        <div class="presente" data-presente="Depurador de Ar Philco Inox">
+      <p>Depurador de Ar Philco Inox</p>
+      <a href="https://www.buscape.com.br/coifa-depurador-ar/depurador-de-ar-parede-philco-slim-60-cm-pdr60i-inox?_lc=88&searchterm=Philco%20Slim%2060%E2%80%AFcm%20PDR60I%20Inox#historico-de-precos" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+        <div class="presente" data-presente="Umidificador de Ar Mondial">
+      <p>Umidificador de Ar Mondial</p>
+      <a href="https://www.buscape.com.br/umidificador/nua-02-umidificador-de-ar-ultrassonico-comfort-air-2-mondial?_lc=88&searchterm=umidificador" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+        <div class="presente" data-presente="Aquecedor Mondial">
+      <p>Aquecedor Mondial</p>
+      <a href="https://www.buscape.com.br/search?q=Aquecedor%20Mondial%20A%20%C3%93leo%20A-06%201500w" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+        <div class="presente" data-presente="Ventilador de Coluna Mondial">
+      <p>Ventilador de Coluna Mondial</p>
+      <a href="https://www.magazineluiza.com.br/ventilador-de-coluna-mondial-vtx-40c-8p-40cm-3-velocidades/p/224368700/ar/arvl/?seller_id=magazineluiza&srsltid=AfmBOopvoUqwZLarhDbNqqS7WUZpPkdytiFVfp8oxDB-dTj27aKZYuGv3h8&gStoreCode=1542" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+    </div>   
+        <div class="presente" data-presente="Ferro de Passar Electrolux">
+      <p>Ferro de Passar Electrolux</p>
+      <a href="https://www.buscape.com.br/ferro-passar-roupas/ferro-de-passar-roupas-a-seco-a-vapor-electrolux-esi10?_lc=88&searchterm=Electrolux%20Efficient%20ESI10" 
+        target="_blank" class="btn-link">🛒 Ver melhor oferta deste produto</a>
+      <button class="btn-presentear">Irei presentear com esta opção</button>
+</div>  
+<section>
+    <h2>📦🎀 Recebimento</h2>
+<div style="background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); margin-top: 24px; line-height: 1.6;">
+  <p>Você pode nos entregar o presente pessoalmente no dia do casamento. 🥰</p>
+  <p>Se quiser entregar em mãos antes da data, também vamos adorar! 💕</p>
+  <p>
+    Ou, se preferir, pode enviá-lo diretamente para o endereço:  
+    <span id="endereco" style="font-weight: 600;">Residencial Morada dos Pássaros II, na Fazenda Rio Grande</span> 📍📦
+    <button onclick="copiarEndereco()" style="margin-left: 10px; padding: 6px 12px; font-size: 0.9rem; border: none; border-radius: 8px; background-color: #800000; color: white; cursor: pointer; transition: background 0.3s;">
+      Copiar endereço
+    </button>
+  </p>
+  <P class="observação" ><strong>🚨 Observação:</strong> Ao realizar a entrega, informe que é para a 
+  <strong>Casa 87</strong>, assim a portaria saberá a quem direcionar.  
+  Quem irá recepcionar será o <strong>Rafael</strong>. 🛎️
+  </p>
+</div>
+
+<script>
+  function copiarEndereco() {
+    const texto = document.getElementById('endereco').innerText;
+    navigator.clipboard.writeText(texto).then(() => {
+      alert('Endereço copiado com sucesso!');
+    });
+  }
+</script>
+<iframe
+  width="100%"
+  height="300"
+  style="border:0; border-radius: 12px; margin-top: 20px;"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://maps.google.com/maps?q=Residencial%20Morada%20dos%20P%C3%A1ssaros%20II%2C%20Fazenda%20Rio%20Grande%2C%20PR&t=&z=15&ie=UTF8&iwloc=&output=embed"
+  title="Residencial Morada Dos Passáros II"
+></iframe>
+  </section>
+    <h2>💖 Prefere nos presentar via Pix?</h2>
+        <section class="Pix - Introdução" style="text-align: center; padding: 2rem;">
+      <p>Ainda não conseguimos colocar "lua de mel" na lista de presentes, então o Pix entrou pra salvar! 😄</p>
+      <p>Queremos te levar com a gente, em cada passo do nosso novo começo.</p>
+      <p>Toda contribuição nos ajuda a montar nosso lar com carinho e a viver a nossa lua de mel dos sonhos.</p>
+      <p>A gente agradece demais — de coração e de🧳 pronta!</p>
+    </section>
+    <p>🔑 41-99578-5048</p>
+    <p> 📩 Abaixo o QR Code que irá lhe direcionar diretamente para a chave e facilitar o envio!</p>
+    <img src="https://raw.githubusercontent.com/rafaoliveira946/rafa-e-gabi.github.io/main/qrcode-pix.jpeg"
+      alt="QR Code do Pix"
+      style="max-width: 300px; width: 100%; margin-top: 15px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);" />
+<section style="max-width: 600px; margin: 40px auto; color: #333;">
+  <h2>📍 Cerimônia</h2>
+
+  <div style="
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--marsala);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.4);
+    margin-bottom: 20px;
+    justify-content: center;
+  ">
+    <span style="font-size: 2rem; line-height: 1;">📅</span>
+    <span>27/12/2025</span>
+    <span style="font-size: 2rem; line-height: 1;">⏰</span>
+    <span>17h</span>
+  </div>
+
+  <address style="font-style: normal; line-height: 1.4; font-size: 1rem; color: #555; margin-bottom: 20px;">
+    Castelo Di Capri<br />
+    Tv. São Francisco de Assis<br />
+    São José dos Pinhais – PR
+  </address>
+
+  <iframe
+    width="100%"
+    height="300"
+    style="border:0; border-radius: 12px; box-shadow: 0 4px 12px rgba(128, 0, 0, 0.2);"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://maps.google.com/maps?q=Castelo%20di%20Capri,%20São%20José%20dos%20Pinhais&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    title="Mapa do Castelo Di Capri - São José dos Pinhais"
+  ></iframe>
+</section>
+  <footer>
+    <p>&copy; Criado por Rafael Machado</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="close-btn" aria-label="Fechar modal">&times;</button>
+      <h3 id="modalTitle">Confirmar presente</h3>
+      <p id="presenteSelecionado" style="font-weight: bold; margin-top:0;"></p>
+      <form id="formPresente">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required autocomplete="name" />
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required autocomplete="tel" pattern="[0-9\s\-\+\(\)]{8,15}" placeholder="(XX) XXXXX-XXXX" />
+
+        <button type="submit" class="submit-btn">Confirmar</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module">
+    // Contador regressivo até 27/12/2025 às 17:00
+    const countdown = document.getElementById('countdown');
+    const targetDate = new Date('2025-12-27T17:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdown.innerHTML = "🎉 Chegou o grande dia!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      // Atualiza cada parte da contagem
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Modal funcionalidade
+    const modal = document.getElementById('modal');
+    const btnsPresentear = document.querySelectorAll('.btn-presentear');
+    const closeBtn = modal.querySelector('.close-btn');
+    const presenteSelecionado = document.getElementById('presenteSelecionado');
+    const formPresente = document.getElementById('formPresente');
+
+    // Firebase imports e configuração
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCvf9jdwcnPI2AlVBa1vNuGBQPz0VNht6M",
+      authDomain: "site-casamento-gabriela-rafael.firebaseapp.com",
+      projectId: "site-casamento-gabriela-rafael",
+      storageBucket: "site-casamento-gabriela-rafael.firebasestorage.app",
+      messagingSenderId: "662349125263",
+      appId: "1:662349125263:web:3dc037a47c4a001a8582fa"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Função para verificar quais presentes já foram confirmados e desabilitar botões
+    async function verificarPresentesConfirmados() {
+      for (const btn of btnsPresentear) {
+        const presenteNome = btn.parentElement.getAttribute('data-presente');
+        const docRef = doc(db, "presentes", presenteNome);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          btn.disabled = true;
+          btn.textContent = "Presente já escolhido 💝";
+        }
+      }
+    }
+
+    verificarPresentesConfirmados();
+
+    // Abrir modal ao clicar no botão
+    btnsPresentear.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const presenteNome = btn.parentElement.getAttribute('data-presente');
+        presenteSelecionado.textContent = presenteNome;
+        modal.style.display = "flex";
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    // Fechar modal
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = "none";
+      modal.setAttribute('aria-hidden', 'true');
+      formPresente.reset();
+    });
+
+    // Fechar modal clicando fora do conteúdo
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        modal.setAttribute('aria-hidden', 'true');
+        formPresente.reset();
+      }
+    });
+
+    // Submeter formulário e salvar no Firestore
+    formPresente.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nome = formPresente.nome.value.trim();
+      const telefone = formPresente.telefone.value.trim();
+      const presente = presenteSelecionado.textContent;
+
+      if (!nome || !telefone) {
+        alert("Por favor, preencha nome e telefone.");
+        return;
+      }
+
+      try {
+        const docRef = doc(db, "presentes", presente);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          alert("Este presente já foi escolhido, por favor selecione outro.");
+          modal.style.display = "none";
+          formPresente.reset();
+          verificarPresentesConfirmados();
+          return;
+        }
+
+        await setDoc(docRef, { nome, telefone, timestamp: new Date().toISOString() });
+
+        alert("Obrigado por confirmar seu presente! Estamos muito felizes com sua participação.");
+        modal.style.display = "none";
+        formPresente.reset();
+
+        // Atualiza os botões
+        verificarPresentesConfirmados();
+      } catch (error) {
+        console.error("Erro ao salvar a confirmação: ", error);
+        alert("Houve um erro ao salvar, tente novamente mais tarde.");
+      }
+    });
+  </script>
+</body>
+</html>
