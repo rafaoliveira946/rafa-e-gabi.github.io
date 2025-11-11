@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -915,7 +916,7 @@ footer {
     // Função para verificar quais presentes já foram confirmados e desabilitar botões
     async function verificarPresentesConfirmados() {
       for (const btn of btnsPresentear) {
-        const presenteNome = btn.parentElement.getAttribute('data-presente');
+const presenteNome = btn.parentElement.getAttribute('data-presente').trim();
         const docRef = doc(db, "presentes", presenteNome);
         const docSnap = await getDoc(docRef);
 
@@ -994,6 +995,3 @@ footer {
   </script>
 </body>
 </html>
-
-
-
